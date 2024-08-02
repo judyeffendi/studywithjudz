@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg">
-    <title>StudyWithJudz</title>
+    <title>Study Tools</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -49,25 +49,46 @@
         <a href="study.html">📚 Study</a>
         <a href="studytools.html">🔍 Study Tools</a>
         <a href="mcatprep.html">🔐 MCAT Preparation</a>
-
-
-
     </div>
 
-
-
     <div id="main" class="container mx-auto mt-8">
-        <div class="mb-8 flex flex-col items-center lg:flex-row">
-            <img src="images//icons/judz22.jpg" alt="Welcome Image" class="max-w-md rounded-md mb-4 lg:mr-8 lg:mb-0">
-    
-            <div class="text-gray-700 text-center lg:text-left">
-                <p class="new-text text" id="typing-text"></p>
-                <a href="about.html" class="neon-button bg-white text-blue-500 px-6 py-2 rounded-20 border neon-text">ABOUT ME!</a>
-                <a href="images/resume/JERESUME2024-1.docx (1).pdf" class="neon-button bg-white text-blue-500 px-6 py-2 rounded-20 border neon-text">RESUME</a>
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl font-bold mb-4">Study Tools</h1>
+            <p class="text-lg leading-relaxed mb-4">Enhance your study sessions with these tools and resources.</p>
+        </div>
+
+        <!-- Lofi Music Section -->
+        <div class="mb-8 p-6 bg-white rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Listening to Lofi</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Study Resources Section -->
+        <div class="mb-8 p-6 bg-white rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Study Resources</h2>
+            <ul class="list-disc list-inside">
+                <li><a href="https://mcatbros.com" target="_blank" class="text-blue-500 underline">MCAT Bros</a></li>
+                <li><a href="https://www.khanacademy.org/science/mcat" target="_blank" class="text-blue-500 underline">Khan Academy MCAT Prep</a></li>
+                <li><a href="https://www.reddit.com/r/premed/" target="_blank" class="text-blue-500 underline">Reddit Pre-Med Community</a></li>
+                <li><a href="https://www.aamc.org/students" target="_blank" class="text-blue-500 underline">AAMC for Students</a></li>
+            </ul>
+        </div>
+
+        <!-- Clock Section -->
+        <div class="mb-8 p-6 bg-white rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Study Clock</h2>
+            <div class="text-center">
+                <p id="clock" class="text-4xl font-mono mb-4">00:00:00</p>
+                <button onclick="startClock()" class="bg-blue-500 text-white px-6 py-2 rounded-md mr-2">Start</button>
+                <button onclick="stopClock()" class="bg-red-500 text-white px-6 py-2 rounded-md">Stop</button>
+                <button onclick="resetClock()" class="bg-gray-500 text-white px-6 py-2 rounded-md">Reset</button>
+                <div id="log" class="mt-4"></div>
             </div>
         </div>
     </div>
+
     <script src="js/sidebar.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/clock.js"></script>
+
 </body>
 </html>

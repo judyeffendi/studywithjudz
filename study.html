@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg">
+    <title>Study With Judy Effendi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+</head>
+<body class="bg-blue-50">
+
+    <nav class="bg-blue-300 p-4">
+        <div class="container mx-auto flex items-center justify-between flex-wrap">
+            <div class="flex items-center">
+                <span class="openbtn text-white" onclick="openNav()">&#9776;</span>
+                <a href="index.html" class="text-white ml-4">
+                    <img src="images/icons/judz22.PNG" alt="GitHub Logo" class="logo">
+                </a>
+                <body>
+                    <a href="https://judzthecoder.github.io/judzthecoder/index.html" class="personal-website-btn" target="_blank">My Personal Website</a>
+                </body>
+            </div>
+            <div class="flex items-center space-x-4 mt-4 lg:mt-4 flex-wrap">
+                <div class="flex items-center space-x-4 mt-4 lg:mt-4">
+                    <a href="index.html" class="text-white neon-text">HOME</a>
+                    <a href="about.html" class="text-white neon-text">ABOUT</a>
+                    <a href="study.html" class="text-white neon-text">STUDY</a>
+                    <a href="studytools.html" class="text-white neon-text">STUDY TOOLS</a>
+                    <a href="mcatprep.html" class="text-white neon-text">MCAT</a>
+                    <a href="https://www.linkedin.com/in/judy-effendi" target="_blank" rel="noopener noreferrer" class="text-white">
+                        <img src="images/icons/icons8-linkedin-50.png" alt="LinkedIn Logo" class="h-5">
+                    </a>
+                    <a href="https://github.com/judzthecoder" target="_blank" rel="noopener noreferrer" class="text-white">
+                        <img src="images/icons/github.png" alt="GitHub Logo" class="h-5">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img src="images/icons/judz22.PNG" alt="Logo" class="sidebar-logo">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">ℹ️ About</a>
+        <a href="study.html">📚 Study</a>
+        <a href="studytools.html">🔍 Study Tools</a>
+        <a href="mcatprep.html">🔐 MCAT Preparation</a>
+    </div>
+
+    <div id="main" class="container mx-auto mt-8">
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl font-bold mb-4">Study With Me</h1>
+            <p class="text-lg leading-relaxed mb-4">Explore my study guides, learnings, and retention materials for different courses.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Course 1 Block -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Course 1: Intro to BIO</h2>
+                <ul class="list-disc list-inside">
+                    <li><a href="study_guides/" class="text-blue-500 underline">Study Guide</a></li>
+                    <li><a href="learnings/" class="text-blue-500 underline">Learnings</a></li>
+                    <li><a href="retention/" class="text-blue-500 underline">Retention Material</a></li>
+                </ul>
+            </div>
+
+            <!-- Course 2 Block -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Course 2: Intro to CHEM</h2>
+                <ul class="list-disc list-inside">
+                    <li><a href="study_guides/" class="text-blue-500 underline">Study Guide</a></li>
+                    <li><a href="learnings/" class="text-blue-500 underline">Learnings</a></li>
+                    <li><a href="retention/" class="text-blue-500 underline">Retention Material</a></li>
+                </ul>
+            </div>
+
+            <!-- Course 3 Block -->
+            <!-- <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Course 3: Web Development</h2>
+                <ul class="list-disc list-inside">
+                    <li><a href="study_guides/web_dev_guide.pdf" class="text-blue-500 underline">Study Guide</a></li>
+                    <li><a href="learnings/web_dev_learnings.pdf" class="text-blue-500 underline">Learnings</a></li>
+                    <li><a href="retention/web_dev_retention.pdf" class="text-blue-500 underline">Retention Material</a></li>
+                </ul>
+            </div>
+
+            < Course 4 Block -->
+            <!-- <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Course 4: Database Management</h2>
+                <ul class="list-disc list-inside">
+                    <li><a href="study_guides/dbms_guide.pdf" class="text-blue-500 underline">Study Guide</a></li>
+                    <li><a href="learnings/dbms_learnings.pdf" class="text-blue-500 underline">Learnings</a></li>
+                    <li><a href="retention/dbms_retention.pdf" class="text-blue-500 underline">Retention Material</a></li>
+                </ul>
+            </div> -->
+
+            <!-- Course 5 Block -->
+            <!-- <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Course 5: Operating Systems</h2>
+                <ul class="list-disc list-inside">
+                    <li><a href="study_guides/os_guide.pdf" class="text-blue-500 underline">Study Guide</a></li>
+                    <li><a href="learnings/os_learnings.pdf" class="text-blue-500 underline">Learnings</a></li>
+                    <li><a href="retention/os_retention.pdf" class="text-blue-500 underline">Retention Material</a></li>
+                </ul>
+            </div> -->
+
+            <!-- Course 6 Block -->
+            <!-- <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Course 6: Machine Learning</h2>
+                <ul class="list-disc list-inside">
+                    <li><a href="study_guides/ml_guide.pdf" class="text-blue-500 underline">Study Guide</a></li>
+                    <li><a href="learnings/ml_learnings.pdf" class="text-blue-500 underline">Learnings</a></li>
+                    <li><a href="retention/ml_retention.pdf" class="text-blue-500 underline">Retention Material</a></li>
+                </ul>
+            </div>  -->
+        <!-- </div> -->
+    </div>
+
+    <script src="js/sidebar.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

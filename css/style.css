@@ -22,11 +22,11 @@
 
 .neon-text {
     animation: neonVibration 2s infinite;
-    font-family: 'Oleo Script Swash Caps';
+    font-family: 'Nunito', sans-serif;
 }
 
 .text {
-    font-family: 'Oleo Script Swash Caps';
+    font-family: 'Nunito', sans-serif;
 }
 
 .new-text {
@@ -35,7 +35,7 @@
 }
 
 body {
-    font-family: 'Oleo Script Swash Caps';
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -118,6 +118,27 @@ background-color: burlywood; /* Slightly darker pink on hover */
     font-size: 1.2em;
 }
 .description-text {
-    font-family: 'Oleo Script Swash Caps';
+    font-family: 'Nunito', sans-serif;
     color: burlywood;
+}
+
+.personal-website-btn {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: burlywood;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.personal-website-btn:hover {
+    background-color: lightblue;
+}
+
+.personal-website-btn:active {
+    transform: scale(0.98);
 }
