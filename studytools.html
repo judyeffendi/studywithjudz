@@ -1,94 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg">
-    <title>Study Tools</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/sidebar.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study Tools • Judy Effendi</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg" />
+
+  <!-- Fonts & Tailwind v2 -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+
+  <style>
+    :root { --navy:#0b3c78; --glass: rgba(255,255,255,0.72); }
+    body { font-family:'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .rounded-20 { border-radius: 20px; }
+    .logo { height: 32px; width: 32px; border-radius: 6px; }
+    .sidebar-logo { width: 64px; height: 64px; border-radius: 12px; }
+  </style>
 </head>
-<body class="bg-blue-50">
 
-    <nav class="bg-blue-300 p-4">
-        <div class="container mx-auto flex items-center justify-between flex-wrap">
-            <div class="flex items-center">
-                <span class="openbtn text-white" onclick="openNav()">&#9776;</span>
-                <a href="index.html" class="text-white ml-4">
-                    <img src="images/icons/judz22.PNG" alt="GitHub Logo" class="logo">
-                </a>
-                <body>
-                    <a href="https://judzthecoder.github.io/judzthecoder/index.html" class="personal-website-btn" target="_blank">My Personal Website</a>
-                </body>
-            </div>
-            <div class="flex items-center space-x-4 mt-4 lg:mt-4 flex-wrap">
-                <div class="flex items-center space-x-4 mt-4 lg:mt-4">
-                    <a href="index.html" class="text-white neon-text">HOME</a>
-                    <a href="about.html" class="text-white neon-text">ABOUT</a>
-                    <a href="study.html" class="text-white neon-text">STUDY</a>
-                    <a href="studytools.html" class="text-white neon-text">STUDY TOOLS</a>
-                    <a href="mcatprep.html" class="text-white neon-text">MCAT</a>
-                    <a href="https://www.linkedin.com/in/judy-effendi" target="_blank" rel="noopener noreferrer" class="text-white">
-                        <img src="images/icons/icons8-linkedin-50.png" alt="LinkedIn Logo" class="h-5">
-                    </a>
-                    <a href="https://github.com/judzthecoder" target="_blank" rel="noopener noreferrer" class="text-white">
-                        <img src="images/icons/github.png" alt="GitHub Logo" class="h-5">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <img src="images/icons/judz22.PNG" alt="Logo" class="sidebar-logo">
-        <a href="index.html">🏠 Home</a>
-        <a href="about.html">ℹ️ About</a>
-        <a href="study.html">📚 Study</a>
-        <a href="studytools.html">🔍 Study Tools</a>
-        <a href="mcatprep.html">🔐 MCAT Preparation</a>
+<body class="bg-blue-50 text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="bg-blue-900 text-white">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap">
+      <div class="flex items-center space-x-3">
+        <button aria-label="Open menu" class="openbtn focus:outline-none" onclick="openNav()">&#9776;</button>
+        <a href="index.html" class="inline-flex items-center space-x-2">
+          <img src="images/icons/judz22.png" alt="Site logo" class="logo" />
+          <span class="font-bold tracking-wide">Judy Effendi</span>
+        </a>
+        <a href="https://judzthecoder.github.io/judzthecoder/index.html" target="_blank" class="ml-4 underline text-blue-100 hover:text-white">Personal Website</a>
+      </div>
+      <div class="hidden md:flex items-center space-x-6 mt-4 md:mt-0">
+        <a href="index.html" class="hover:opacity-90">Home</a>
+        <a href="about.html" class="hover:opacity-90">About</a>
+        <a href="study.html" class="hover:opacity-90">Study</a>
+        <a href="studytools.html" aria-current="page" class="font-semibold border-b-2 border-white">Study Tools</a>
+        <a href="mcatprep.html" class="hover:opacity-90">MCAT</a>
+        <a href="https://www.linkedin.com/in/judy-effendi" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/icons8-linkedin-50.png" alt="LinkedIn" class="h-5" /></a>
+        <a href="https://github.com/judzthecoder" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/github.png" alt="GitHub" class="h-5" /></a>
+      </div>
     </div>
+  </nav>
 
-    <div id="main" class="container mx-auto mt-8">
-        <div class="mb-8 text-center">
-            <h1 class="text-3xl font-bold mb-4">Study Tools</h1>
-            <p class="text-lg leading-relaxed mb-4">Enhance your study sessions with these tools and resources.</p>
-        </div>
+  <!-- SIDEBAR -->
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
+    <img src="images/icons/judz22.png" alt="Logo" class="sidebar-logo" />
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="study.html">📚 Study</a>
+    <a href="studytools.html" aria-current="page">🔍 Study Tools</a>
+    <a href="mcatprep.html">🧪 MCAT Preparation</a>
+  </div>
 
-        <!-- Lofi Music Section -->
-        <div class="mb-8 p-6 bg-white rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Listening to Lofi</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
-        <!-- Study Resources Section -->
-        <div class="mb-8 p-6 bg-white rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Study Resources</h2>
-            <ul class="list-disc list-inside">
-                <li><a href="https://mcatbros.com" target="_blank" class="text-blue-500 underline">MCAT Bros</a></li>
-                <li><a href="https://www.khanacademy.org/science/mcat" target="_blank" class="text-blue-500 underline">Khan Academy MCAT Prep</a></li>
-                <li><a href="https://www.reddit.com/r/premed/" target="_blank" class="text-blue-500 underline">Reddit Pre-Med Community</a></li>
-                <li><a href="https://www.aamc.org/students" target="_blank" class="text-blue-500 underline">AAMC for Students</a></li>
-            </ul>
-        </div>
-
-        <!-- Clock Section -->
-        <div class="mb-8 p-6 bg-white rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Study Clock</h2>
-            <div class="text-center">
-                <p id="clock" class="text-4xl font-mono mb-4">00:00:00</p>
-                <button onclick="startClock()" class="bg-blue-500 text-white px-6 py-2 rounded-md mr-2">Start</button>
-                <button onclick="stopClock()" class="bg-red-500 text-white px-6 py-2 rounded-md">Stop</button>
-                <button onclick="resetClock()" class="bg-gray-500 text-white px-6 py-2 rounded-md">Reset</button>
-                <div id="log" class="mt-4"></div>
-            </div>
-        </div>
+  <!-- HERO -->
+  <header class="bg-gradient-to-b from-blue-50 to-white">
+    <div id="main" class="container mx-auto px-4 pt-10 pb-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Study Tools</h1>
+      <p class="mt-3 text-lg md:text-xl text-gray-700">Enhance your study sessions with curated tools and resources.</p>
     </div>
+  </header>
 
-    <script src="js/sidebar.js"></script>
-    <script src="js/clock.js"></script>
+  <!-- CONTENT -->
+  <main class="container mx-auto px-4 pb-16 space-y-10">
+    <!-- Lofi Music -->
+    <section class="p-6 bg-white rounded-2xl shadow">
+      <h2 class="text-2xl font-bold mb-4">🎵 Lofi for Focus</h2>
+      <div class="flex justify-center">
+        <iframe class="rounded-xl shadow" width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" title="lofi hip hop radio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
 
+    <!-- Study Resources -->
+    <section class="p-6 bg-white rounded-2xl shadow">
+      <h2 class="text-2xl font-bold mb-4">📚 Study Resources</h2>
+      <ul class="list-disc list-inside space-y-2 text-blue-700">
+        <li><a href="https://mcatbros.com" target="_blank" class="underline">MCAT Bros</a></li>
+        <li><a href="https://www.khanacademy.org/science/mcat" target="_blank" class="underline">Khan Academy MCAT Prep</a></li>
+        <li><a href="https://www.reddit.com/r/premed/" target="_blank" class="underline">Reddit Pre‑Med Community</a></li>
+        <li><a href="https://www.aamc.org/students" target="_blank" class="underline">AAMC for Students</a></li>
+      </ul>
+    </section>
+
+    <!-- Study Clock -->
+    <section class="p-6 bg-white rounded-2xl shadow text-center">
+      <h2 class="text-2xl font-bold mb-4">⏱️ Study Clock</h2>
+      <p id="clock" class="text-4xl font-mono mb-4">00:00:00</p>
+      <div class="space-x-2">
+        <button onclick="startClock()" class="bg-blue-500 text-white px-6 py-2 rounded-md">Start</button>
+        <button onclick="stopClock()" class="bg-red-500 text-white px-6 py-2 rounded-md">Stop</button>
+        <button onclick="resetClock()" class="bg-gray-500 text-white px-6 py-2 rounded-md">Reset</button>
+      </div>
+      <div id="log" class="mt-4 text-left max-w-md mx-auto text-sm text-gray-600"></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 py-6 text-sm text-gray-600 flex flex-col md:flex-row items-center justify-between">
+      <p>© <span id="year"></span> Judy Effendi</p>
+      <div class="flex items-center space-x-4 mt-2 md:mt-0">
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="study.html" class="hover:underline">Study</a>
+        <a href="mcatprep.html" class="hover:underline">MCAT</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/sidebar.js"></script>
+  <script src="js/clock.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>

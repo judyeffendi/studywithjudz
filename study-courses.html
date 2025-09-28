@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study With Judy Effendi</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg" />
+
+  <!-- SEO -->
+  <meta name="description" content="Explore Judy Effendi's study guides, learnings, and retention materials across biology and chemistry." />
+
+  <!-- Fonts & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+
+  <style>
+    :root { --navy:#0b3c78; --ink:#0f172a; --glass: rgba(255,255,255,0.72); }
+    body { font-family: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .rounded-20 { border-radius: 20px; }
+    .card { background: #fff; border: 1px solid #f3f4f6; border-radius: 0.75rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .card:hover { box-shadow: 0 8px 24px rgba(13, 42, 148, 0.12); transform: translateY(-2px); transition: all .2s ease; }
+    .logo { height: 32px; width: 32px; border-radius: 6px; }
+  </style>
+</head>
+
+<body class="bg-blue-50 text-gray-800">
+  <!-- NAVBAR (fixes nested <body>) -->
+  <nav class="bg-blue-900 text-white">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap">
+      <div class="flex items-center space-x-3">
+        <button aria-label="Open menu" class="openbtn focus:outline-none" onclick="openNav()">&#9776;</button>
+        <a href="index.html" class="inline-flex items-center space-x-2">
+          <img src="images/icons/judz22.png" alt="Site logo" class="logo" />
+          <span class="font-bold tracking-wide">StudyWithJudy</span>
+        </a>
+        <a href="https://judzthecoder.github.io/judzthecoder/index.html" class="ml-4 underline text-blue-100 hover:text-white" target="_blank" rel="noopener">Personal Website</a>
+      </div>
+      <div class="hidden md:flex items-center space-x-6 mt-4 md:mt-0">
+        <a href="index.html" class="hover:opacity-90">Home</a>
+        <a href="about.html" class="hover:opacity-90">About</a>
+        <a href="study.html" aria-current="page" class="font-semibold border-b-2 border-white">Study</a>
+        <a href="studytools.html" class="hover:opacity-90">Study Tools</a>
+        <a href="mcatprep.html" class="hover:opacity-90">MCAT</a>
+        <a href="https://www.linkedin.com/in/judy-effendi" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/icons8-linkedin-50.png" alt="LinkedIn" class="h-5" /></a>
+        <a href="https://github.com/judzthecoder" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/github.png" alt="GitHub" class="h-5" /></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIDEBAR (ids preserved for your JS) -->
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
+    <img src="images/icons/judz22.png" alt="Logo" class="sidebar-logo" />
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="study.html">📚 Study</a>
+    <a href="studytools.html">🔍 Study Tools</a>
+    <a href="mcatprep.html">🧪 MCAT Preparation</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="bg-gradient-to-b from-blue-50 to-white">
+    <div id="main" class="container mx-auto px-4 pt-10 pb-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Study With Me</h1>
+      <p class="mt-3 text-lg md:text-xl text-gray-700">Explore study guides, learnings, and retention materials — organized by course.</p>
+    </div>
+  </header>
+
+  <!-- COURSE GRID -->
+  <main class="container mx-auto px-4 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- BIO -->
+      <section class="card p-6">
+        <h2 class="text-2xl font-bold">Intro to Biology</h2>
+        <p class="text-gray-600 mt-1">Core concepts, memorization frameworks, and high‑yield diagrams.</p>
+        <ul class="mt-4 list-disc list-inside text-blue-700 space-y-1">
+          <li><a href="study_guides/bio/" class="underline">Study Guide</a></li>
+          <li><a href="learnings/bio/" class="underline">Learnings</a></li>
+          <li><a href="retention/bio/" class="underline">Retention Material</a></li>
+        </ul>
+      </section>
+
+      <!-- CHEM -->
+      <section class="card p-6">
+        <h2 class="text-2xl font-bold">Intro to Chemistry</h2>
+        <p class="text-gray-600 mt-1">Stoichiometry, kinetics, equilibrium, acid–base, and electrochem.</p>
+        <ul class="mt-4 list-disc list-inside text-blue-700 space-y-1">
+          <li><a href="study_guides/chem/" class="underline">Study Guide</a></li>
+          <li><a href="learnings/chem/" class="underline">Learnings</a></li>
+          <li><a href="retention/chem/" class="underline">Retention Material</a></li>
+        </ul>
+      </section>
+
+      <!-- Add‑on template (hidden until used) -->
+      <section class="card p-6 hidden" id="course-template">
+        <h2 class="text-2xl font-bold">Course Title</h2>
+        <p class="text-gray-600 mt-1">Short description.</p>
+        <ul class="mt-4 list-disc list-inside text-blue-700 space-y-1">
+          <li><a href="#" class="underline">Study Guide</a></li>
+          <li><a href="#" class="underline">Learnings</a></li>
+          <li><a href="#" class="underline">Retention Material</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-10 rounded-2xl bg-blue-900 text-white p-8 flex flex-col md:flex-row items-center justify-between">
+      <div>
+        <h3 class="text-2xl font-bold">Missing a course you need?</h3>
+        <p class="text-blue-100 mt-1">Tell me what to add next and I’ll build a guide.</p>
+      </div>
+      <div class="mt-4 md:mt-0">
+        <a href="mailto:judyeffendi2@gmail.com" class="bg-white text-blue-900 px-6 py-3 rounded-20 font-semibold shadow hover:shadow-md transform hover:-translate-y-0.5 transition">Email Me</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 py-6 text-sm text-gray-600 flex flex-col md:flex-row items-center justify-between">
+      <p>© <span id="year"></span> Judy Effendi</p>
+      <div class="flex items-center space-x-4 mt-2 md:mt-0">
+        <a href="https://judzthecoder.github.io/judzthecoder/index.html" target="_blank" class="hover:underline">Personal Website</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="study.html" class="hover:underline">Study</a>
+        <a href="mcatprep.html" class="hover:underline">MCAT</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/sidebar.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
