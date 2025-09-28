@@ -1,126 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg">
-    <title>Study With Judy Effendi</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/sidebar.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudyWithJudz • Judy Effendi</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg" />
+
+  <!-- SEO -->
+  <meta name="description" content="StudyWithJudz — study guides, MCAT prep, and tools curated by Judy Effendi (CS → Pre‑Med)." />
+
+  <!-- Fonts & Tailwind v2 (matching your stack) -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+
+  <style>
+    :root { --navy:#0b3c78; --ink:#0f172a; --glass: rgba(255,255,255,0.72); }
+    body { font-family: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .neon-text { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+    .rounded-20 { border-radius: 20px; }
+    .glass { background: var(--glass); backdrop-filter: blur(8px); }
+    .sidebar-logo { width: 64px; height: 64px; border-radius: 12px; }
+    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9)); }
+    .logo { height: 32px; width: 32px; border-radius: 6px; }
+  </style>
 </head>
-<body class="bg-blue-50">
 
-    <nav class="bg-blue-300 p-4">
-        <div class="container mx-auto flex items-center justify-between flex-wrap">
-            <div class="flex items-center">
-                <span class="openbtn text-white" onclick="openNav()">&#9776;</span>
-                <a href="index.html" class="text-white ml-4">
-                    <img src="images/icons/judz22.PNG" alt="GitHub Logo" class="logo">
-                </a>
-                <body>
-                    <a href="https://judzthecoder.github.io/judzthecoder/index.html" class="personal-website-btn" target="_blank">My Personal Website</a>
-                </body>
-            </div>
-            <div class="flex items-center space-x-4 mt-4 lg:mt-4 flex-wrap">
-                <div class="flex items-center space-x-4 mt-4 lg:mt-4">
-                    <a href="index.html" class="text-white neon-text">HOME</a>
-                    <a href="about.html" class="text-white neon-text">ABOUT</a>
-                    <a href="study.html" class="text-white neon-text">STUDY</a>
-                    <a href="studytools.html" class="text-white neon-text">STUDY TOOLS</a>
-                    <a href="mcatprep.html" class="text-white neon-text">MCAT</a>
-                    <a href="https://www.linkedin.com/in/judy-effendi" target="_blank" rel="noopener noreferrer" class="text-white">
-                        <img src="images/icons/icons8-linkedin-50.png" alt="LinkedIn Logo" class="h-5">
-                    </a>
-                    <a href="https://github.com/judzthecoder" target="_blank" rel="noopener noreferrer" class="text-white">
-                        <img src="images/icons/github.png" alt="GitHub Logo" class="h-5">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <img src="images/icons/judz22.PNG" alt="Logo" class="sidebar-logo">
-        <a href="index.html">🏠 Home</a>
-        <a href="about.html">ℹ️ About</a>
-        <a href="study.html">📚 Study</a>
-        <a href="studytools.html">🔍 Study Tools</a>
-        <a href="mcatprep.html">🔐 MCAT Preparation</a>
+<body class="bg-blue-50 text-gray-800">
+  <!-- NAVBAR (fixed nested <body> issue) -->
+  <nav class="bg-blue-900 text-white">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <button aria-label="Open menu" class="openbtn focus:outline-none" onclick="openNav()">&#9776;</button>
+        <a href="index.html" class="inline-flex items-center space-x-2">
+          <img src="images/icons/judz22.png" alt="Site logo" class="logo" />
+          <span class="font-bold tracking-wide">StudyWithJudz</span>
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="index.html" class="hover:opacity-90">Home</a>
+        <a href="about.html" class="hover:opacity-90">About</a>
+        <a href="study.html" aria-current="page" class="font-semibold border-b-2 border-white">Study</a>
+        <a href="studytools.html" class="hover:opacity-90">Study Tools</a>
+        <a href="mcatprep.html" class="hover:opacity-90">MCAT</a>
+        <a href="https://www.linkedin.com/in/judy-effendi" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/icons8-linkedin-50.png" alt="LinkedIn" class="h-5" /></a>
+        <a href="https://github.com/judzthecoder" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/github.png" alt="GitHub" class="h-5" /></a>
+      </div>
     </div>
+  </nav>
 
-    <div id="main" class="container mx-auto mt-8">
-        <div class="mb-8 text-center">
-            <h1 class="text-3xl font-bold mb-4">Study With Me</h1>
-            <p class="text-lg leading-relaxed mb-4">Explore my study guides, learnings, and retention materials for different courses.</p>
+  <!-- SIDEBAR (keeps existing IDs for js/sidebar.js) -->
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
+    <img src="images/icons/judz22.png" alt="Logo" class="sidebar-logo" />
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="study.html" aria-current="page">📚 Study</a>
+    <a href="studytools.html">🔍 Study Tools</a>
+    <a href="study-courses.html">🔍 Study Courses</a>
+    <a href="mcatprep.html">🧪 MCAT Preparation</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="bg-gradient-to-b from-blue-50 to-white">
+    <div id="main" class="container mx-auto px-4 pt-10 pb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-blue-900">Study With Judz</h1>
+          <p class="mt-3 text-lg md:text-xl text-gray-700">Curated study guides, problem walkthroughs, and MCAT prep — from a <span class="font-semibold">CS → Pre‑Med</span> who still ships code.</p>
+          <p id="typing-text" class="mt-4 text-base text-gray-600"></p>
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="about.html" class="bg-white text-blue-900 px-6 py-3 rounded-20 border border-blue-100 font-semibold shadow hover:shadow-md transform hover:-translate-y-0.5 transition">About Me</a>
+            <a href="images/resume/JUDYEFFENDI2025RESUME.docx.pdf" download class="px-6 py-3 rounded-20 font-semibold border border-blue-200 bg-blue-100 text-blue-900 hover:bg-blue-200 transition">Download Résumé</a>
+            <a href="https://judyeffendi.github.io/judyeffendi/index.html" target="_blank" class="px-6 py-3 rounded-20 font-semibold border border-blue-200 hover:bg-blue-50 transition">Personal Site</a>
+          </div>
+          <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm text-gray-700">
+            <div class="glass rounded-2xl p-3">Chemistry</div>
+            <div class="glass rounded-2xl p-3">Biology</div>
+            <div class="glass rounded-2xl p-3">Kinetics</div>
+            <div class="glass rounded-2xl p-3">MCAT Strategy</div>
+          </div>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Course 1 Block -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-4">Course 1: Intro to BIO</h2>
-                <ul class="list-disc list-inside">
-                    <li><a href="study_guides/" class="text-blue-500 underline">Study Guide</a></li>
-                    <li><a href="learnings/" class="text-blue-500 underline">Learnings</a></li>
-                    <li><a href="retention/" class="text-blue-500 underline">Retention Material</a></li>
-                </ul>
-            </div>
-
-            <!-- Course 2 Block -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-4">Course 2: Intro to CHEM</h2>
-                <ul class="list-disc list-inside">
-                    <li><a href="study_guides/" class="text-blue-500 underline">Study Guide</a></li>
-                    <li><a href="learnings/" class="text-blue-500 underline">Learnings</a></li>
-                    <li><a href="retention/" class="text-blue-500 underline">Retention Material</a></li>
-                </ul>
-            </div>
-
-            <!-- Course 3 Block -->
-            <!-- <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-4">Course 3: Web Development</h2>
-                <ul class="list-disc list-inside">
-                    <li><a href="study_guides/web_dev_guide.pdf" class="text-blue-500 underline">Study Guide</a></li>
-                    <li><a href="learnings/web_dev_learnings.pdf" class="text-blue-500 underline">Learnings</a></li>
-                    <li><a href="retention/web_dev_retention.pdf" class="text-blue-500 underline">Retention Material</a></li>
-                </ul>
-            </div>
-
-            < Course 4 Block -->
-            <!-- <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-4">Course 4: Database Management</h2>
-                <ul class="list-disc list-inside">
-                    <li><a href="study_guides/dbms_guide.pdf" class="text-blue-500 underline">Study Guide</a></li>
-                    <li><a href="learnings/dbms_learnings.pdf" class="text-blue-500 underline">Learnings</a></li>
-                    <li><a href="retention/dbms_retention.pdf" class="text-blue-500 underline">Retention Material</a></li>
-                </ul>
-            </div> -->
-
-            <!-- Course 5 Block -->
-            <!-- <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-4">Course 5: Operating Systems</h2>
-                <ul class="list-disc list-inside">
-                    <li><a href="study_guides/os_guide.pdf" class="text-blue-500 underline">Study Guide</a></li>
-                    <li><a href="learnings/os_learnings.pdf" class="text-blue-500 underline">Learnings</a></li>
-                    <li><a href="retention/os_retention.pdf" class="text-blue-500 underline">Retention Material</a></li>
-                </ul>
-            </div> -->
-
-            <!-- Course 6 Block -->
-            <!-- <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-4">Course 6: Machine Learning</h2>
-                <ul class="list-disc list-inside">
-                    <li><a href="study_guides/ml_guide.pdf" class="text-blue-500 underline">Study Guide</a></li>
-                    <li><a href="learnings/ml_learnings.pdf" class="text-blue-500 underline">Learnings</a></li>
-                    <li><a href="retention/ml_retention.pdf" class="text-blue-500 underline">Retention Material</a></li>
-                </ul>
-            </div>  -->
-        <!-- </div> -->
+        <div class="flex justify-center lg:justify-end">
+          <img src="images/me/grapic10.jpeg" alt="Judy studying with notes and laptop" class="rounded-2xl shadow-lg w-full max-w-md object-cover" />
+        </div>
+      </div>
     </div>
+  </header>
 
-    <script src="js/sidebar.js"></script>
-    <script src="js/script.js"></script>
+  <!-- FEATURED SECTIONS -->
+  <section class="container mx-auto px-4 py-10">
+    <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Start here</h2>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card: Study Guides -->
+      <a href="study.html" class="block bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">
+        <h3 class="text-lg font-semibold">Topic Study Guides</h3>
+        <p class="text-gray-700 mt-2">Concise, exam‑ready notes with worked examples and pitfalls.</p>
+        <ul class="text-gray-600 text-sm mt-3 list-disc list-inside space-y-1">
+          <li>Acid–Base, Buffers, Titrations</li>
+          <li>Equilibrium & Ksp</li>
+          <li>Thermo & Electrochem</li>
+        </ul>
+      </a>
+
+      <!-- Card: MCAT Prep -->
+      <a href="mcatprep.html" class="block bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">
+        <h3 class="text-lg font-semibold">MCAT Prep Hub</h3>
+        <p class="text-gray-700 mt-2">Schedule, resources, and score‑raising habits I’m using.</p>
+        <ul class="text-gray-600 text-sm mt-3 list-disc list-inside space-y-1">
+          <li>520+ study plan</li>
+          <li>Daily CARS drills</li>
+          <li>Passage note templates</li>
+        </ul>
+      </a>
+
+      <!-- Card: Tools -->
+      <a href="studytools.html" class="block bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">
+        <h3 class="text-lg font-semibold">Study Tools</h3>
+        <p class="text-gray-700 mt-2">Calculators, cheat sheets, and spaced‑repetition helpers.</p>
+        <ul class="text-gray-600 text-sm mt-3 list-disc list-inside space-y-1">
+          <li>Rate law & half‑life</li>
+          <li>Henderson–Hasselbalch</li>
+          <li>Osmolarity & dilutions</li>
+        </ul>
+      </a>
+    </div>
+  </section>
+
+  <!-- LATEST / RECENT POSTS (placeholder) -->
+  <section class="bg-white">
+    <div class="container mx-auto px-4 py-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Latest walkthroughs</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <a href="#" class="block rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold">Kinetics: Rate Law → Integrated Forms</h3>
+          <p class="text-gray-700 mt-2">Reading slope correctly, finding k from plots, and common traps.</p>
+          <p class="text-gray-500 text-sm mt-2">Updated Sept 2025</p>
+        </a>
+        <a href="#" class="block rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold">Buffers in 3 Moves</h3>
+          <p class="text-gray-700 mt-2">Pick the pair, HH once, sanity‑check with categories.</p>
+          <p class="text-gray-500 text-sm mt-2">Updated Sept 2025</p>
+        </a>
+        <a href="#" class="block rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold">Electrochem: Nernst Without Tears</h3>
+          <p class="text-gray-700 mt-2">From cell diagrams to spontaneity and E at non‑standard conditions.</p>
+          <p class="text-gray-500 text-sm mt-2">Updated Sept 2025</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container mx-auto px-4 pb-16">
+    <div class="rounded-2xl bg-blue-900 text-white p-8 flex flex-col md:flex-row items-center justify-between">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold">Have a topic you want broken down?</h2>
+        <p class="text-blue-100 mt-2">Send me a problem or chapter and I’ll add a walkthrough.</p>
+      </div>
+      <div class="mt-6 md:mt-0 flex flex-wrap gap-3">
+        <a href="mailto:judyeffendi2@gmail.com" class="bg-white text-blue-900 px-6 py-3 rounded-20 font-semibold shadow hover:shadow-md transform hover:-translate-y-0.5 transition">Email Me</a>
+        <a href="https://github.com/judzthecoder" target="_blank" class="px-6 py-3 rounded-20 font-semibold border border-white hover:bg-white hover:text-blue-900 transition">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 py-6 text-sm text-gray-600 flex flex-col md:flex-row items-center justify-between">
+      <p>© <span id="year"></span> Judy Effendi</p>
+      <div class="flex items-center space-x-4 mt-2 md:mt-0">
+        <a href="https://judyeffendi.github.io/judyeffendi/index.html" target="_blank" class="hover:underline">Personal Website</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="study.html" class="hover:underline">Study</a>
+        <a href="mcatprep.html" class="hover:underline">MCAT</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/sidebar.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    // Typewriter effect for the hero subline — progressively types multiple phrases
+    const phrases = [
+      "Acid–base made friendly.",
+      "Kinetics without the tears.",
+      "MCAT prep with engineering focus.",
+      "Short notes. Clear logic. Exam‑ready.",
+    ];
+    const el = document.getElementById('typing-text');
+    let pi = 0, ci = 0;
+    function type() {
+      if (!el) return;
+      const p = phrases[pi];
+      el.textContent = p.slice(0, ci++);
+      if (ci <= p.length) {
+        setTimeout(type, 40);
+      } else {
+        setTimeout(() => { ci = 0; pi = (pi + 1) % phrases.length; type(); }, 1200);
+      }
+    }
+    type();
+
+    // Fallback footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
