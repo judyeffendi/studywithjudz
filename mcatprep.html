@@ -1,191 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg">
-    <title>MCAT Study Schedule</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/sidebar.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MCAT Prep • Schedule & Tracker</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg" />
+
+  <!-- Fonts & Tailwind v2 -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+
+  <style>
+    body { font-family:'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .rounded-20 { border-radius: 20px; }
+    .logo { height: 32px; width: 32px; border-radius: 6px; }
+    .sidebar-logo { width: 64px; height: 64px; border-radius: 12px; }
+    thead th { position: sticky; top: 0; background: #ffffff; z-index: 1; }
+    .pill { border-radius: 9999px; }
+    .table-input { width: 100%; }
+  </style>
 </head>
-<body class="bg-blue-50">
 
-    <nav class="bg-blue-300 p-4">
-        <div class="container mx-auto flex items-center justify-between flex-wrap">
-            <div class="flex items-center">
-                <span class="openbtn text-white" onclick="openNav()">&#9776;</span>
-                <a href="index.html" class="text-white ml-4">
-                    <img src="images/icons/judz22.PNG" alt="GitHub Logo" class="logo">
-                </a>
-                <a href="https://judzthecoder.github.io/judzthecoder/index.html" class="personal-website-btn" target="_blank">My Personal Website</a>
-            </div>
-            <div class="flex items-center space-x-4 mt-4 lg:mt-4 flex-wrap">
-                <div class="flex items-center space-x-4 mt-4 lg:mt-4">
-                    <a href="index.html" class="text-white neon-text">HOME</a>
-                    <a href="about.html" class="text-white neon-text">ABOUT</a>
-                    <a href="study.html" class="text-white neon-text">STUDY</a>
-                    <a href="studytools.html" class="text-white neon-text">STUDY TOOLS</a>
-                    <a href="mcatprep.html" class="text-white neon-text">MCAT</a>
-                    <a href="https://www.linkedin.com/in/judy-effendi" target="_blank" rel="noopener noreferrer" class="text-white">
-                        <img src="images/icons/icons8-linkedin-50.png" alt="LinkedIn Logo" class="h-5">
-                    </a>
-                    <a href="https://github.com/judzthecoder" target="_blank" rel="noopener noreferrer" class="text-white">
-                        <img src="images/icons/github.png" alt="GitHub Logo" class="h-5">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <img src="images/icons/judz22.PNG" alt="Logo" class="sidebar-logo">
-        <a href="index.html">🏠 Home</a>
-        <a href="about.html">ℹ️ About</a>
-        <a href="study.html">📚 Study</a>
-        <a href="studytools.html">🔍 Study Tools</a>
-        <a href="mcatprep.html">🔐 MCAT Preparation</a>
+<body class="bg-blue-50 text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="bg-blue-900 text-white">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap">
+      <div class="flex items-center space-x-3">
+        <button aria-label="Open menu" class="openbtn focus:outline-none" onclick="openNav()">&#9776;</button>
+        <a href="index.html" class="inline-flex items-center space-x-2">
+          <img src="images/icons/judz22.png" alt="Site logo" class="logo" />
+          <span class="font-bold tracking-wide">Judy Effendi</span>
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-6 mt-4 md:mt-0">
+        <a href="index.html" class="hover:opacity-90">Home</a>
+        <a href="about.html" class="hover:opacity-90">About</a>
+        <a href="study.html" class="hover:opacity-90">Study</a>
+        <a href="studytools.html" class="hover:opacity-90">Study Tools</a>
+        <a href="mcatprep.html" aria-current="page" class="font-semibold border-b-2 border-white">MCAT</a>
+        <a href="https://www.linkedin.com/in/judy-effendi" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/icons8-linkedin-50.png" alt="LinkedIn" class="h-5" /></a>
+        <a href="https://github.com/judzthecoder" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/github.png" alt="GitHub" class="h-5" /></a>
+      </div>
     </div>
+  </nav>
 
-    <div id="main" class="container mx-auto mt-8">
-        <div class="mb-8 text-center">
-            <h1 class="text-3xl font-bold mb-4">MCAT Study Schedule</h1>
-            <p class="text-lg leading-relaxed mb-4">Track your study sessions, check your progress, and take notes.</p>
-        </div>
+  <!-- SIDEBAR -->
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
+    <img src="images/icons/judz22.png" alt="Logo" class="sidebar-logo" />
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="study.html">📚 Study</a>
+    <a href="studytools.html">🔍 Study Tools</a>
+    <a href="mcatprep.html" aria-current="page">🧪 MCAT Preparation</a>
+  </div>
 
-        <div class="mb-8 p-6 bg-white rounded-lg shadow-lg">
-            <table class="min-w-full bg-white">
-                <thead>
-                    <tr>
-                        <th class="py-2 px-4 border-b">Date</th>
-                        <th class="py-2 px-4 border-b">Day of the Week</th>
-                        <th class="py-2 px-4 border-b">Hours Studied</th>
-                        <th class="py-2 px-4 border-b">Subject/Activity</th>
-                        <th class="py-2 px-4 border-b">Notes</th>
-                        <th class="py-2 px-4 border-b">Check if Done</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Example rows; add rows for each date and activity -->
-                    <tr>
-                        <td class="py-2 px-4 border-b">2026-01-01</td>
-                        <td class="py-2 px-4 border-b">Thursday</td>
-                        <td class="py-2 px-4 border-b">4</td>
-                        <td class="py-2 px-4 border-b">Diagnostic Test</td>
-                        <td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td>
-                        <td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td>
-                    </tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-02</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Diagnostic Test</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-03</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-04</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-05</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-06</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-07</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-08</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-09</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-10</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-11</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">CARS Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-12</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">CARS Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-13</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">0</td><td class="py-2 px-4 border-b">Rest Day</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2" disabled></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" disabled></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-14</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">0</td><td class="py-2 px-4 border-b">Rest Day</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2" disabled></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" disabled></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-15</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-16</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-17</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-18</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-19</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-20</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-21</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-22</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-23</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-24</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-25</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-26</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-27</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-28</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-29</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-30</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-01-31</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">CARS Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-01</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">CARS Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-02</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">CARS Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-03</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-04</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-05</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-06</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-07</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-08</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Biology Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-09</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-10</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-11</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-12</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-13</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-14</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-15</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-16</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-17</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-18</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-19</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-20</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-21</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-22</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Chemistry Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-23</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-24</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-25</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-26</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-27</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-02-28</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-01</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Physics Content Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-02</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-03</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-04</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-05</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-06</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-07</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-08</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Psychology/Sociology Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-09</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">CARS Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-10</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">CARS Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-11</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Full-Length Practice Test</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-12</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Review Test</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-13</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Content Review</td><td class="py-2 px-4 border-b">Based on test results</td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-14</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Content Review</td><td class="py-2 px-4 border-b">Based on test results</td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-15</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Content Review</td><td class="py-2 px-4 border-b">Based on test results</td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-16</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Content Review</td><td class="py-2 px-4 border-b">Based on test results</td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-17</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">0</td><td class="py-2 px-4 border-b">Rest Day</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-18</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Full-Length Practice Test</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-19</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Review Test</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-20</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Content Review</td><td class="py-2 px-4 border-b">Based on test results</td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-21</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Content Review</td><td class="py-2 px-4 border-b">Based on test results</td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-22</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Content Review</td><td class="py-2 px-4 border-b">Based on test results</td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-23</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Content Review</td><td class="py-2 px-4 border-b">Based on test results</td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-24</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">0</td><td class="py-2 px-4 border-b">Rest Day</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-25</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Focus on Weak Areas</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-26</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Focus on Weak Areas</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-27</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Focus on Weak Areas</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-28</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Focus on Weak Areas</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-29</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Practice Passages & Questions</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-30</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Practice Passages & Questions</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-03-31</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">0</td><td class="py-2 px-4 border-b">Rest Day</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-01</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Focus on Weak Areas</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-02</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Focus on Weak Areas</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-03</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Focus on Weak Areas</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-04</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Practice Passages & Questions</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-05</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Practice Passages & Questions</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-06</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Review & Refine Strategies</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-07</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Review & Refine Strategies</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-08</td><td class="py-2 px-4 border-b">Wednesday</td><td class="py-2 px-4 border-b">0</td><td class="py-2 px-4 border-b">Rest Day</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-09</td><td class="py-2 px-4 border-b">Thursday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Final Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-10</td><td class="py-2 px-4 border-b">Friday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Final Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-11</td><td class="py-2 px-4 border-b">Saturday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Final Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-12</td><td class="py-2 px-4 border-b">Sunday</td><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">Final Review</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-13</td><td class="py-2 px-4 border-b">Monday</td><td class="py-2 px-4 border-b">0</td><td class="py-2 px-4 border-b">Rest Day</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <tr><td class="py-2 px-4 border-b">2026-04-14</td><td class="py-2 px-4 border-b">Tuesday</td><td class="py-2 px-4 border-b">0</td><td class="py-2 px-4 border-b">Rest Day</td><td class="py-2 px-4 border-b"><textarea class="w-full border rounded p-1" rows="2"></textarea></td><td class="py-2 px-4 border-b"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"></td></tr>
-                    <!-- Add additional rows here -->
-                </tbody>
-            </table>
+  <!-- HERO -->
+  <header class="bg-gradient-to-b from-blue-50 to-white">
+    <div id="main" class="container mx-auto px-4 pt-10 pb-6">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">MCAT Study Schedule</h1>
+        <p class="mt-3 text-lg md:text-xl text-gray-700">Plan, track, and iterate. Your schedule saves in your browser automatically.</p>
+      </div>
+
+      <!-- Controls -->
+      <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="bg-white rounded-2xl p-4 shadow">
+          <label class="text-sm text-gray-600">Start date</label>
+          <input id="startDate" type="date" class="mt-1 w-full border rounded-md px-3 py-2" />
+          <button id="btnSeed" class="mt-3 w-full bg-blue-600 text-white px-3 py-2 rounded-md">Seed 2‑Week Plan</button>
         </div>
+        <div class="bg-white rounded-2xl p-4 shadow">
+          <label class="text-sm text-gray-600">Add days</label>
+          <div class="flex space-x-2 mt-1">
+            <input id="addDays" type="number" min="1" value="7" class="border rounded-md px-3 py-2 w-24" />
+            <button id="btnAddDays" class="bg-blue-600 text-white px-3 py-2 rounded-md flex-1">Add</button>
+          </div>
+          <button id="btnAddRow" class="mt-3 w-full border px-3 py-2 rounded-md">Add Row</button>
+        </div>
+        <div class="bg-white rounded-2xl p-4 shadow">
+          <label class="text-sm text-gray-600">Import / Export</label>
+          <div class="mt-1 flex items-center space-x-2">
+            <input id="fileImport" type="file" accept="application/json" class="text-sm" />
+          </div>
+          <div class="mt-3 grid grid-cols-2 gap-2">
+            <button id="btnExport" class="border px-3 py-2 rounded-md">Export JSON</button>
+            <button id="btnClear" class="border px-3 py-2 rounded-md text-red-600">Clear</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-4 shadow">
+          <div class="text-sm text-gray-600">Progress</div>
+          <div class="mt-2">
+            <div class="h-2 bg-blue-100 rounded"><div id="bar" class="h-2 bg-blue-600 rounded" style="width:0%"></div></div>
+            <div class="mt-2 text-sm"><span id="pct">0%</span> complete • <span id="hrs">0</span> hrs logged</div>
+          </div>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <script src="js/sidebar.js"></script>
+  <!-- TABLE -->
+  <main class="container mx-auto px-4 pb-16">
+    <div class="bg-white rounded-2xl shadow overflow-hidden">
+      <div class="overflow-x-auto">
+        <table id="schedule" class="min-w-full">
+          <thead>
+            <tr class="text-left border-b">
+              <th class="py-3 px-4">Date</th>
+              <th class="py-3 px-4">Day</th>
+              <th class="py-3 px-4">Hours</th>
+              <th class="py-3 px-4">Subject / Activity</th>
+              <th class="py-3 px-4">Notes</th>
+              <th class="py-3 px-4">Done</th>
+              <th class="py-3 px-4"></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 py-6 text-sm text-gray-600 flex flex-col md:flex-row items-center justify-between">
+      <p>© <span id="year"></span> Judy Effendi</p>
+      <div class="flex items-center space-x-4 mt-2 md:mt-0">
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="study.html" class="hover:underline">Study</a>
+        <a href="studytools.html" class="hover:underline">Tools</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/sidebar.js"></script>
+  <script>
+    // ===== Utilities =====
+    const dayName = d => new Date(d).toLocaleDateString(undefined, { weekday:'long' });
+    const qs = s => document.querySelector(s);
+    const qsa = s => Array.from(document.querySelectorAll(s));
+    const storageKey = 'mcatSchedule.v1';
+
+    function save() {
+      const rows = qsa('#tbody tr').map(tr => ({
+        date: tr.querySelector('[data-key="date"]').value || '',
+        day: tr.querySelector('[data-key="day"]').textContent || '',
+        hours: parseFloat(tr.querySelector('[data-key="hours"]').value || '0'),
+        subject: tr.querySelector('[data-key="subject"]').value || '',
+        notes: tr.querySelector('[data-key="notes"]').value || '',
+        done: tr.querySelector('[data-key="done"]').checked || false,
+      }));
+      localStorage.setItem(storageKey, JSON.stringify(rows));
+      updateProgress();
+    }
+
+    function load() {
+      const data = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      if (data.length) {
+        data.forEach(addRowFromObj);
+      } else {
+        seedTwoWeekPlan();
+      }
+      updateProgress();
+    }
+
+    function addRowFromObj(obj={}) {
+      const tr = document.createElement('tr');
+      tr.className = 'border-b align-top';
+      tr.innerHTML = `
+        <td class="py-2 px-4"><input type="date" data-key="date" class="border rounded px-2 py-1 table-input" value="${obj.date||''}"></td>
+        <td class="py-2 px-4"><span data-key="day" class="text-gray-600">${obj.day|| (obj.date?dayName(obj.date):'')}</span></td>
+        <td class="py-2 px-4"><input type="number" min="0" step="0.5" data-key="hours" class="border rounded px-2 py-1 w-24" value="${obj.hours||0}"></td>
+        <td class="py-2 px-4"><input type="text" data-key="subject" class="border rounded px-2 py-1 table-input" placeholder="e.g., Bio content review" value="${obj.subject||''}"></td>
+        <td class="py-2 px-4"><textarea data-key="notes" rows="2" class="border rounded px-2 py-1 table-input" placeholder="Key takeaways, error log...">${obj.notes||''}</textarea></td>
+        <td class="py-2 px-4 text-center"><input type="checkbox" data-key="done" ${obj.done? 'checked':''}></td>
+        <td class="py-2 px-4 text-right"><button class="text-red-600 hover:underline" data-action="remove">Remove</button></td>
+      `;
+      tr.addEventListener('input', e => {
+        if (e.target.matches('[data-key="date"]')) {
+          tr.querySelector('[data-key="day"]').textContent = e.target.value ? dayName(e.target.value) : '';
+        }
+        save();
+      });
+      tr.addEventListener('change', save);
+      tr.querySelector('[data-action="remove"]').addEventListener('click', () => { tr.remove(); save(); });
+      qs('#tbody').appendChild(tr);
+    }
+
+    function addEmptyRow() { addRowFromObj({ hours: 4 }); }
+
+    function addDays(n=7) {
+      const last = [...qsa('#tbody tr')].pop();
+      let start = new Date();
+      if (last) {
+        const d = last.querySelector('[data-key="date"]').value;
+        if (d) start = new Date(d);
+      }
+      for (let i=1; i<=n; i++) {
+        const dt = new Date(start);
+        dt.setDate(dt.getDate() + i);
+        addRowFromObj({ date: dt.toISOString().slice(0,10), day: dayName(dt), hours: 4, subject: '' });
+      }
+      save();
+    }
+
+    function seedTwoWeekPlan() {
+      const sd = qs('#startDate').value || new Date().toISOString().slice(0,10);
+      qs('#tbody').innerHTML = '';
+      const templates = [
+        { subject: 'Diagnostic (FL) + Review', hours: 5 },
+        { subject: 'Biology — Cells & Genetics', hours: 4 },
+        { subject: 'Chemistry — Stoichiometry/Equilibrium', hours: 4 },
+        { subject: 'Physics — Kinematics & Forces', hours: 4 },
+        { subject: 'Psych/Soc — Foundational Theories', hours: 4 },
+        { subject: 'CARS — 6 passages + Review', hours: 3.5 },
+        { subject: 'Active Rest — Light review/Anki', hours: 0 },
+      ];
+      for (let w=0; w<2; w++) {
+        for (let i=0; i<7; i++) {
+          const dt = new Date(sd);
+          dt.setDate(dt.getDate() + (w*7 + i));
+          const t = templates[i % templates.length];
+          addRowFromObj({ date: dt.toISOString().slice(0,10), day: dayName(dt), hours: t.hours, subject: t.subject });
+        }
+      }
+      save();
+    }
+
+    function updateProgress() {
+      const rows = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      const total = rows.length;
+      const done = rows.filter(r => r.done).length;
+      const hrs = rows.reduce((a,b)=> a + (b.done ? (Number(b.hours)||0) : 0), 0);
+      const pct = total ? Math.round((done/total)*100) : 0;
+      qs('#pct').textContent = pct + '%';
+      qs('#hrs').textContent = hrs.toFixed(1);
+      qs('#bar').style.width = pct + '%';
+    }
+
+    // ===== Wire up controls =====
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      load();
+      qs('#btnSeed').addEventListener('click', seedTwoWeekPlan);
+      qs('#btnAddRow').addEventListener('click', addEmptyRow);
+      qs('#btnAddDays').addEventListener('click', () => addDays(parseInt(qs('#addDays').value || '7', 10)));
+      qs('#btnExport').addEventListener('click', () => {
+        const data = localStorage.getItem(storageKey) || '[]';
+        const blob = new Blob([data], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'mcat_schedule.json'; a.click(); URL.revokeObjectURL(url);
+      });
+      qs('#btnClear').addEventListener('click', () => { if (confirm('Clear the current schedule?')) { localStorage.removeItem(storageKey); qs('#tbody').innerHTML=''; save(); }});
+      qs('#fileImport').addEventListener('change', (e) => {
+        const file = e.target.files[0]; if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => { try { const arr = JSON.parse(reader.result); qs('#tbody').innerHTML=''; (arr||[]).forEach(addRowFromObj); save(); } catch(err){ alert('Invalid JSON'); } };
+        reader.readAsText(file);
+      });
+    });
+  </script>
 </body>
 </html>
