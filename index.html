@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Judy Effendi</title>
+  <title>Judy Effendi — CS → Pre‑Med</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/icons/judz22.jpg" />
 
   <!-- SEO -->
-  <meta name="description" content="Judy Effendi — CS → Pre‑Med. Study guides, MCAT prep, research, and projects at the intersection of AI, web, and medicine." />
+  <meta name="description" content="Study guides, MCAT prep, research, and projects at the intersection of AI, web, and medicine." />
   <meta name="author" content="Judy Effendi" />
   <meta property="og:title" content="Judy Effendi — CS → Pre‑Med" />
-  <meta property="og:description" content="Study guides, MCAT prep, research, and projects at the intersection of AI, web, and medicine." />
+  <meta property="og:description" content="Engineer → Medicine. Study guides, MCAT prep, research, and projects." />
   <meta property="og:image" content="images/me/grapic10.jpeg" />
   <meta property="og:type" content="website" />
 
@@ -31,26 +31,27 @@
     .glass { background: var(--glass); backdrop-filter: blur(8px); }
     .logo { height: 32px; width: 32px; border-radius: 6px; }
     .sidebar-logo { width: 64px; height: 64px; border-radius: 12px; }
+    .section { scroll-margin-top: 96px; }
   </style>
 </head>
 
 <body class="bg-blue-50 text-gray-800">
-  <!-- NAVBAR -->
-  <nav class="bg-blue-900 text-white">
+  <!-- NAVBAR (links now anchor to sections on the same page) -->
+  <nav class="bg-blue-900 text-white sticky top-0 z-40">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <button aria-label="Open menu" class="openbtn focus:outline-none" onclick="openNav()">&#9776;</button>
-        <a href="index.html" class="inline-flex items-center space-x-2">
+        <a href="#top" class="inline-flex items-center space-x-2">
           <img src="images/icons/judz22.png" alt="Site logo" class="logo" />
           <span class="font-bold tracking-wide">Judy Effendi</span>
         </a>
       </div>
       <div class="hidden md:flex items-center space-x-6">
-        <a href="index.html" class="hover:opacity-90">Home</a>
-        <a href="about.html" aria-current="page" class="font-semibold border-b-2 border-white">About</a>
-        <a href="study.html" class="hover:opacity-90">Study</a>
-        <a href="studytools.html" class="hover:opacity-90">Study Tools</a>
-        <a href="study-courses.html" class="hover:opacity-90">Study Courses</a>
+        <a href="#about" class="hover:opacity-90">About</a>
+        <a href="#features" class="hover:opacity-90">Study</a>
+        <a href="#features" class="hover:opacity-90">Tools</a>
+        <a href="#highlights" class="hover:opacity-90">Highlights</a>
+        <a href="#cta" class="hover:opacity-90">Contact</a>
         <a href="mcatprep.html" class="hover:opacity-90">MCAT</a>
         <a href="https://www.linkedin.com/in/judy-effendi" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/icons8-linkedin-50.png" alt="LinkedIn" class="h-5" /></a>
         <a href="https://github.com/judzthecoder" target="_blank" rel="noopener" class="inline-flex"><img src="images/icons/github.png" alt="GitHub" class="h-5" /></a>
@@ -58,19 +59,21 @@
     </div>
   </nav>
 
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR (anchors mirror top nav) -->
   <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
     <img src="images/icons/judz22.png" alt="Logo" class="sidebar-logo" />
-    <a href="index.html" aria-current="page">🏠 Home</a>
-    <a href="about.html">ℹ️ About</a>
-    <a href="study.html">📚 Study</a>
-    <a href="studytools.html">🔍 Study Tools</a>
+    <a href="#top">🏠 Home</a>
+    <a href="#about">ℹ️ About</a>
+    <a href="#features">📚 Study & Tools</a>
     <a href="mcatprep.html">🧪 MCAT Preparation</a>
+    <a href="#highlights">🌟 Highlights</a>
+    <a href="#cta">✉️ Contact</a>
     <a href="https://judyeffendi.github.io/judyeffendi/index.html" target="_blank">🌐 Personal Website</a>
   </div>
 
   <!-- HERO -->
+  <a id="top"></a>
   <header class="bg-gradient-to-b from-blue-50 to-white">
     <div id="main" class="container mx-auto px-4 pt-12 pb-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -79,7 +82,7 @@
           <p class="mt-4 text-lg md:text-xl text-gray-700">I build at the intersection of <span class="font-semibold">AI, web, and medicine</span> — sharing what I learn so others can climb faster.</p>
           <div class="mt-6 flex flex-wrap items-center gap-3">
             <a href="images/resume/JUDYEFFENDI2025RESUME.docx.pdf" download class="bg-white text-blue-900 px-6 py-3 rounded-20 border border-blue-100 font-semibold shadow hover:shadow-md transform hover:-translate-y-0.5 transition">Download Résumé</a>
-            <a href="about.html" class="px-6 py-3 rounded-20 font-semibold border border-blue-200 bg-blue-100 text-blue-900 hover:bg-blue-200 transition">About Me</a>
+            <a href="#about" class="px-6 py-3 rounded-20 font-semibold border border-blue-200 bg-blue-100 text-blue-900 hover:bg-blue-200 transition">About Me</a>
             <a href="mailto:judyeffendi2@gmail.com" class="px-6 py-3 rounded-20 font-semibold border border-blue-200 hover:bg-blue-50 transition">Email</a>
           </div>
           <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm text-gray-700">
@@ -96,8 +99,33 @@
     </div>
   </header>
 
-  <!-- FEATURE STRIP -->
-  <section class="container mx-auto px-4 pb-4">
+  <!-- ABOUT (merged copy from About page) -->
+  <section id="about" class="section container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <article class="lg:col-span-2 max-w-none">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Hi, I’m Judy.</h2>
+        <p class="mt-4 text-lg leading-relaxed text-gray-700">I earned a <strong>BS in Computer Science</strong> and spent a year as a <strong>Software Engineer at Target</strong>. I loved building, but I wanted more impact at the point where people need it most — healthcare. Now I’m a <strong>non‑traditional pre‑med</strong> pursuing medicine while still shipping software and research projects that make learning and care delivery better.</p>
+        <p class="mt-4 text-lg leading-relaxed text-gray-700">This site tracks the journey: study notes, MCAT prep, code snippets, and reflections. I hope it helps anyone who’s considering a big pivot. With focus and community, the leap is possible.</p>
+        <p class="mt-4 text-lg leading-relaxed text-gray-700">I’m also a mentor and organizer — running CS outreach, leading research committees, and coordinating national panels on AI in Medicine. Good leadership creates better teams; better teams create better care.</p>
+      </article>
+
+      <aside>
+        <div class="bg-white rounded-2xl shadow p-6">
+          <h3 class="text-xl font-semibold text-blue-900">Quick facts</h3>
+          <ul class="mt-4 space-y-3 text-gray-700">
+            <li>🎓 BS in Computer Science</li>
+            <li>💼 SWE → Pre‑Med</li>
+            <li>🧠 Interests: AI in Medicine, Pathology, UX</li>
+            <li>🤝 Organizer: research & education events</li>
+            <li>🏃‍♀️ Athlete: boxing, running, yoga, pilates</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP (Study & Tools links) -->
+  <section id="features" class="section container mx-auto px-4 pb-4">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <a href="study.html" class="block bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">
         <h3 class="font-semibold">Study Guides</h3>
@@ -111,7 +139,7 @@
         <h3 class="font-semibold">Tools</h3>
         <p class="text-gray-700 mt-2 text-sm">Calculators and templates that save time.</p>
       </a>
-      <a href="about.html" class="block bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">
+      <a href="#highlights" class="block bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">
         <h3 class="font-semibold">About & Experience</h3>
         <p class="text-gray-700 mt-2 text-sm">Pathology research, NAAMA leadership, and projects.</p>
       </a>
@@ -119,7 +147,7 @@
   </section>
 
   <!-- HIGHLIGHTS / CURRENT WORK -->
-  <section class="bg-white">
+  <section id="highlights" class="section bg-white">
     <div class="container mx-auto px-4 py-12">
       <h2 class="text-2xl md:text-3xl font-bold text-blue-900">Highlights</h2>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
@@ -146,7 +174,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="container mx-auto px-4 pb-16">
+  <section id="cta" class="section container mx-auto px-4 pb-16">
     <div class="rounded-2xl bg-blue-900 text-white p-8 flex flex-col md:flex-row items-center justify-between">
       <div>
         <h2 class="text-2xl md:text-3xl font-bold">Let’s connect</h2>
@@ -165,8 +193,8 @@
       <p>© <span id="year"></span> Judy Effendi</p>
       <div class="flex items-center space-x-4 mt-2 md:mt-0">
         <a href="https://judyeffendi.github.io/judyeffendi/index.html" target="_blank" class="hover:underline">Personal Website</a>
-        <a href="about.html" class="hover:underline">About</a>
-        <a href="study.html" class="hover:underline">Study</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#features" class="hover:underline">Study & Tools</a>
         <a href="mcatprep.html" class="hover:underline">MCAT</a>
       </div>
     </div>
